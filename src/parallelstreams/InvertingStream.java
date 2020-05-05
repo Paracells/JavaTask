@@ -23,7 +23,7 @@ public class InvertingStream {
         // write your code here
 
         return streams.stream()
-                .map(x -> x.isParallel() ? LongStream.of() : x.parallel())
+                .map(x -> x.isParallel() ? x.sequential() : x.parallel())
                 .collect(Collectors.toList());
 
     }
