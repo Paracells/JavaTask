@@ -21,7 +21,11 @@ public class InvertingStream {
 
     private static List<LongStream> invertedStreams(List<LongStream> streams) {
         // write your code here
-        return streams;
+
+        return streams.stream()
+                .map(x -> x.isParallel() ? LongStream.of() : x.parallel())
+                .collect(Collectors.toList());
+
     }
 
     /* Do not modify the code below */
