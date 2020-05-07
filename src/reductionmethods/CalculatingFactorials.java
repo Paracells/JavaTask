@@ -5,6 +5,7 @@ import java.util.stream.LongStream;
 public class CalculatingFactorials {
     public static void main(String[] args) {
         System.out.println(factorial(2));
+        
 
     }
 
